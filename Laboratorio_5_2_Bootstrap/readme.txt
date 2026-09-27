@@ -119,3 +119,8 @@ OBJETIVO ACADÉMICO:
 Demostrar la integración de Bootstrap con HTML5 y CSS, el uso de selectores,
 propiedades, modelo de caja, componentes de framework, diseño responsivo y
 control de versiones mediante Git y GitHub.
+
+VERIFICACIÓN FINAL:
+La página fue probada en vista de escritorio y dispositivo móvil.
+Se verificaron el Navbar responsivo, Grid, Cards, cambio de idioma
+ES/EN y la sección semántica aside de comentarios.
