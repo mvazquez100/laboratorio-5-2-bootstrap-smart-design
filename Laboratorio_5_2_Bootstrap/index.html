@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--
+        CARACTERÍSTICAS PRINCIPALES DE HTML5 UTILIZADAS:
+        1. <!DOCTYPE html> identifica el documento como HTML5.
+        2. <meta charset="UTF-8"> permite caracteres especiales.
+        3. <meta name="viewport"> permite diseño responsivo.
+        4. Se utilizan etiquetas semánticas: <header>, <nav>, <main>, <section>,
+           <article>, <aside> y <footer>.
+        5. <aside> se usa para contenido complementario: comentarios de visitantes.
+        6. Bootstrap 5.3.8 se integra mediante CDN de jsDelivr.
+        7. styles.css añade estilos personalizados, Box Model y media queries.
+        8. Un pequeño script permite cambiar el contenido visible entre español e inglés.
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Design - Landing pages, logos y recursos digitales para emprendedores.">
+    <title>Smart Design | Bootstrap Responsive Web</title>
+
+    <!-- Bootstrap 5.3.8 CSS - CDN jsDelivr -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER: cabecera principal y navegación -->
+    <header id="inicio">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" aria-label="Navegación principal">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+                    <img
+                        src="images/smart-design-logo.png" width="40" height="40"
+                        alt="Logo de Smart Design"
+                        class="brand-logo"
+                    >
+                    <span class="fw-bold">Smart Design</span>
+                </a>
+
+                <!-- Botón de navegación móvil -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Mostrar u ocultar navegación"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#inicio" data-i18n="navHome">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#servicios" data-i18n="navServices">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#productos" data-i18n="navProducts">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#nosotros" data-i18n="navAbout">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#comentarios" data-i18n="navComments">Comentarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto" data-i18n="navContact">Contacto</a>
+                        </li>
+
+                        <!-- Selector de idioma -->
+                        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Cambiar idioma">
+                                <button id="btn-es" type="button" class="btn btn-outline-light active" aria-pressed="true">
+                                    ES
+                                </button>
+                                <button id="btn-en" type="button" class="btn btn-outline-light" aria-pressed="false">
+                                    EN
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero principal -->
+        <section class="hero-section d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-12 col-lg-7">
+                        <span class="badge text-bg-primary mb-3 px-3 py-2" data-i18n="heroBadge">
+                            Diseño digital para emprendedores
+                        </span>
+
+                        <h1 class="display-4 fw-bold mb-3" data-i18n="heroTitle">
+                            Diseños modernos para impulsar tu negocio
+                        </h1>
+
+                        <p class="lead mb-4" data-i18n="heroText">
+                            Creamos landing pages, logos y recursos digitales con una experiencia
+                            visual atractiva, funcional y adaptable a diferentes dispositivos.
+                        </p>
+
+                        <div class="d-flex flex-column flex-sm-row gap-3">
+                            <a href="#servicios" class="btn btn-primary btn-lg px-4" data-i18n="heroBtnServices">
+                                Ver servicios
+                            </a>
+
+                            <a href="#productos" class="btn btn-outline-light btn-lg px-4" data-i18n="heroBtnProducts">
+                                Explorar productos
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-5 text-center">
+                        <div class="hero-logo-box mx-auto">
+                            <img
+                                src="images/smart-design-logo.png" width="150" height="150"
+                                alt="Identidad visual de Smart Design"
+                                class="img-fluid hero-logo"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- MAIN: contenido principal -->
+    <main>
+
+        <!-- Servicios -->
+        <section id="servicios" class="py-5">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <p class="text-primary fw-semibold mb-2" data-i18n="servicesEyebrow">SERVICIOS</p>
+                    <h2 class="fw-bold" data-i18n="servicesTitle">Soluciones creativas para tu marca</h2>
+                    <p class="text-secondary section-description mx-auto" data-i18n="servicesText">
+                        Utilizamos componentes y utilidades de Bootstrap para presentar la
+                        información de forma organizada y responsiva.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card service-card h-100 shadow-sm border-0">
+                            <div class="card-body p-4">
+                                <div class="feature-icon mb-3">01</div>
+                                <h3 class="h4 card-title" data-i18n="service1Title">Landing Pages</h3>
+                                <p class="card-text text-secondary" data-i18n="service1Text">
+                                    Sitios modernos, claros y responsivos para presentar productos,
+                                    servicios o campañas digitales.
+                                </p>
+                                <a href="#contacto" class="btn btn-outline-primary" data-i18n="moreInfo">Más información</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card service-card h-100 shadow-sm border-0">
+                            <div class="card-body p-4">
+                                <div class="feature-icon mb-3">02</div>
+                                <h3 class="h4 card-title" data-i18n="service2Title">Diseño de Logos</h3>
+                                <p class="card-text text-secondary" data-i18n="service2Text">
+                                    Identidad visual profesional para ayudar a que una marca tenga
+                                    una presencia consistente y reconocible.
+                                </p>
+                                <a href="#contacto" class="btn btn-outline-primary" data-i18n="moreInfo">Más información</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card service-card h-100 shadow-sm border-0">
+                            <div class="card-body p-4">
+                                <div class="feature-icon mb-3">03</div>
+                                <h3 class="h4 card-title" data-i18n="service3Title">Contenido Digital</h3>
+                                <p class="card-text text-secondary" data-i18n="service3Text">
+                                    Plantillas, recursos gráficos y diseños preparados para
+                                    emprendimientos y tiendas en línea.
+                                </p>
+                                <a href="#contacto" class="btn btn-outline-primary" data-i18n="moreInfo">Más información</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos -->
+        <section id="productos" class="products-section py-5 bg-light">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <p class="text-primary fw-semibold mb-2" data-i18n="productsEyebrow">PRODUCTOS DIGITALES</p>
+                    <h2 class="fw-bold" data-i18n="productsTitle">Destacados de Smart Design</h2>
+                    <p class="text-secondary section-description mx-auto" data-i18n="productsText">
+                        Ejemplos de recursos digitales presentados con el sistema Grid y Cards de Bootstrap.
+                    </p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card product-card h-100 shadow-sm">
+                            <div class="card-body p-4">
+                                <span class="badge text-bg-success mb-3" data-i18n="popular">Popular</span>
+                                <h3 class="h5 card-title" data-i18n="product1Title">Kit de identidad visual</h3>
+                                <p class="card-text text-secondary" data-i18n="product1Text">
+                                    Recursos editables para fortalecer la identidad gráfica de una marca.
+                                </p>
+                                <p class="product-price mb-3">$12.00</p>
+                                <button class="btn btn-primary w-100" type="button" data-i18n="viewProduct">
+                                    Ver producto
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card product-card h-100 shadow-sm">
+                            <div class="card-body p-4">
+                                <span class="badge text-bg-dark mb-3" data-i18n="new">Nuevo</span>
+                                <h3 class="h5 card-title" data-i18n="product2Title">Plantilla Landing Page</h3>
+                                <p class="card-text text-secondary" data-i18n="product2Text">
+                                    Estructura HTML y CSS moderna para pequeños negocios y emprendedores.
+                                </p>
+                                <p class="product-price mb-3">$15.00</p>
+                                <button class="btn btn-primary w-100" type="button" data-i18n="viewProduct">
+                                    Ver producto
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card product-card h-100 shadow-sm">
+                            <div class="card-body p-4">
+                                <span class="badge text-bg-primary mb-3" data-i18n="digital">Digital</span>
+                                <h3 class="h5 card-title" data-i18n="product3Title">Pack para redes sociales</h3>
+                                <p class="card-text text-secondary" data-i18n="product3Text">
+                                    Plantillas visuales listas para personalizar y publicar en redes sociales.
+                                </p>
+                                <p class="product-price mb-3">$10.00</p>
+                                <button class="btn btn-primary w-100" type="button" data-i18n="viewProduct">
+                                    Ver producto
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            NOSOTROS + ASIDE:
+            <aside> representa contenido complementario al contenido principal.
+            En pantallas grandes se posiciona a la derecha mediante float:right.
+            En pantallas pequeñas vuelve al flujo normal para conservar la responsividad.
+        -->
+        <section id="nosotros" class="py-5">
+            <div class="container py-4 clearfix">
+
+                <aside id="comentarios" class="comments-aside mb-5 mb-lg-0">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <span class="badge text-bg-primary mb-3" data-i18n="commentsBadge">COMENTARIOS</span>
+                            <h2 class="h4 fw-bold" data-i18n="commentsTitle">Opiniones de visitantes</h2>
+                            <p class="text-secondary small" data-i18n="commentsIntro">
+                                Esta sección utiliza la etiqueta semántica aside porque contiene
+                                información complementaria relacionada con el contenido principal.
+                            </p>
+
+                            <blockquote class="comment-item">
+                                <p class="mb-2" data-i18n="comment1">
+                                    “Diseño claro, moderno y fácil de navegar.”
+                                </p>
+                                <footer class="small text-secondary">— Cliente demo</footer>
+                            </blockquote>
+
+                            <blockquote class="comment-item">
+                                <p class="mb-2" data-i18n="comment2">
+                                    “La versión móvil mantiene una buena organización del contenido.”
+                                </p>
+                                <footer class="small text-secondary">— Visitante demo</footer>
+                            </blockquote>
+
+                            <hr>
+
+                            <form>
+                                <div class="mb-3">
+                                    <label for="commentName" class="form-label" data-i18n="nameLabel">Nombre</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="commentName"
+                                        data-i18n-placeholder="namePlaceholder"
+                                        placeholder="Escribe tu nombre"
+                                    >
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="commentText" class="form-label" data-i18n="commentLabel">Comentario</label>
+                                    <textarea
+                                        class="form-control"
+                                        id="commentText"
+                                        rows="3"
+                                        data-i18n-placeholder="commentPlaceholder"
+                                        placeholder="Escribe tu comentario"
+                                    ></textarea>
+                                </div>
+
+                                <button type="button" class="btn btn-primary w-100" data-i18n="sendComment">
+                                    Enviar comentario
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </aside>
+
+                <article class="about-content">
+                    <div class="row align-items-center g-5">
+                        <div class="col-12 col-md-5 text-center">
+                            <img
+                                src="images/smart-design-logo.png" width="150" height="150"
+                                alt="Logo de Smart Design"
+                                class="img-fluid about-logo"
+                            >
+                        </div>
+
+                        <div class="col-12 col-md-7">
+                            <p class="text-primary fw-semibold mb-2" data-i18n="aboutEyebrow">SOBRE SMART DESIGN</p>
+                            <h2 class="fw-bold mb-3" data-i18n="aboutTitle">
+                                Diseño visual y desarrollo web en un solo proyecto
+                            </h2>
+                            <p class="text-secondary" data-i18n="aboutText">
+                                Smart Design combina HTML5 semántico, CSS personalizado y Bootstrap
+                                para construir una interfaz sencilla, moderna y adaptable.
+                            </p>
+
+                            <div class="row g-3 mt-2">
+                                <div class="col-12 col-sm-6">
+                                    <div class="info-box">
+                                        <strong>HTML5</strong>
+                                        <span data-i18n="html5Text">Estructura semántica</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <div class="info-box">
+                                        <strong>Bootstrap</strong>
+                                        <span data-i18n="bootstrapText">Grid y componentes</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <div class="info-box">
+                                        <strong>CSS3</strong>
+                                        <span data-i18n="cssText">Estilos personalizados</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <div class="info-box">
+                                        <strong>Responsive</strong>
+                                        <span data-i18n="responsiveText">Móvil, tableta y PC</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section id="contacto" class="cta-section py-5">
+            <div class="container text-center py-4">
+                <h2 class="fw-bold mb-3" data-i18n="ctaTitle">¿Listo para mejorar tu presencia digital?</h2>
+                <p class="mb-4 mx-auto" data-i18n="ctaText">
+                    Smart Design ofrece soluciones visuales para pequeños negocios y emprendedores.
+                </p>
+                <a href="mailto:info@smartdesign.com" class="btn btn-light btn-lg px-4" data-i18n="ctaButton">
+                    Contactar
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER: información final del documento -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-1" data-i18n="footerRights">&copy; 2026 Smart Design. Todos los derechos reservados.</p>
+            <p class="mb-0 small" data-i18n="footerLab">
+                Laboratorio 5.2 - Página web responsiva con Bootstrap y CSS
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3.8 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--
+        CAMBIO DE IDIOMA:
+        Este script cambia únicamente el texto visible de la interfaz.
+        No requiere librerías externas ni servidor.
+    -->
+    <script>
+        const translations = {
+            es: {
+                navHome: "Inicio",
+                navServices: "Servicios",
+                navProducts: "Productos",
+                navAbout: "Nosotros",
+                navComments: "Comentarios",
+                navContact: "Contacto",
+                heroBadge: "Diseño digital para emprendedores",
+                heroTitle: "Diseños modernos para impulsar tu negocio",
+                heroText: "Creamos landing pages, logos y recursos digitales con una experiencia visual atractiva, funcional y adaptable a diferentes dispositivos.",
+                heroBtnServices: "Ver servicios",
+                heroBtnProducts: "Explorar productos",
+                servicesEyebrow: "SERVICIOS",
+                servicesTitle: "Soluciones creativas para tu marca",
+                servicesText: "Utilizamos componentes y utilidades de Bootstrap para presentar la información de forma organizada y responsiva.",
+                service1Title: "Landing Pages",
+                service1Text: "Sitios modernos, claros y responsivos para presentar productos, servicios o campañas digitales.",
+                service2Title: "Diseño de Logos",
+                service2Text: "Identidad visual profesional para ayudar a que una marca tenga una presencia consistente y reconocible.",
+                service3Title: "Contenido Digital",
+                service3Text: "Plantillas, recursos gráficos y diseños preparados para emprendimientos y tiendas en línea.",
+                moreInfo: "Más información",
+                productsEyebrow: "PRODUCTOS DIGITALES",
+                productsTitle: "Destacados de Smart Design",
+                productsText: "Ejemplos de recursos digitales presentados con el sistema Grid y Cards de Bootstrap.",
+                popular: "Popular",
+                new: "Nuevo",
+                digital: "Digital",
+                product1Title: "Kit de identidad visual",
+                product1Text: "Recursos editables para fortalecer la identidad gráfica de una marca.",
+                product2Title: "Plantilla Landing Page",
+                product2Text: "Estructura HTML y CSS moderna para pequeños negocios y emprendedores.",
+                product3Title: "Pack para redes sociales",
+                product3Text: "Plantillas visuales listas para personalizar y publicar en redes sociales.",
+                viewProduct: "Ver producto",
+                commentsBadge: "COMENTARIOS",
+                commentsTitle: "Opiniones de visitantes",
+                commentsIntro: "Esta sección utiliza la etiqueta semántica aside porque contiene información complementaria relacionada con el contenido principal.",
+                comment1: "“Diseño claro, moderno y fácil de navegar.”",
+                comment2: "“La versión móvil mantiene una buena organización del contenido.”",
+                nameLabel: "Nombre",
+                commentLabel: "Comentario",
+                namePlaceholder: "Escribe tu nombre",
+                commentPlaceholder: "Escribe tu comentario",
+                sendComment: "Enviar comentario",
+                aboutEyebrow: "SOBRE SMART DESIGN",
+                aboutTitle: "Diseño visual y desarrollo web en un solo proyecto",
+                aboutText: "Smart Design combina HTML5 semántico, CSS personalizado y Bootstrap para construir una interfaz sencilla, moderna y adaptable.",
+                html5Text: "Estructura semántica",
+                bootstrapText: "Grid y componentes",
+                cssText: "Estilos personalizados",
+                responsiveText: "Móvil, tableta y PC",
+                ctaTitle: "¿Listo para mejorar tu presencia digital?",
+                ctaText: "Smart Design ofrece soluciones visuales para pequeños negocios y emprendedores.",
+                ctaButton: "Contactar",
+                footerRights: "© 2026 Smart Design. Todos los derechos reservados.",
+                footerLab: "Laboratorio 5.2 - Página web responsiva con Bootstrap y CSS"
+            },
+            en: {
+                navHome: "Home",
+                navServices: "Services",
+                navProducts: "Products",
+                navAbout: "About",
+                navComments: "Comments",
+                navContact: "Contact",
+                heroBadge: "Digital design for entrepreneurs",
+                heroTitle: "Modern designs to grow your business",
+                heroText: "We create landing pages, logos, and digital resources with an attractive, functional experience that adapts to different devices.",
+                heroBtnServices: "View services",
+                heroBtnProducts: "Explore products",
+                servicesEyebrow: "SERVICES",
+                servicesTitle: "Creative solutions for your brand",
+                servicesText: "We use Bootstrap components and utilities to present information in an organized and responsive way.",
+                service1Title: "Landing Pages",
+                service1Text: "Modern, clear, and responsive websites for presenting products, services, or digital campaigns.",
+                service2Title: "Logo Design",
+                service2Text: "Professional visual identity to help a brand maintain a consistent and recognizable presence.",
+                service3Title: "Digital Content",
+                service3Text: "Templates, graphic resources, and designs prepared for entrepreneurs and online stores.",
+                moreInfo: "More information",
+                productsEyebrow: "DIGITAL PRODUCTS",
+                productsTitle: "Smart Design Highlights",
+                productsText: "Examples of digital resources presented with Bootstrap Grid and Cards.",
+                popular: "Popular",
+                new: "New",
+                digital: "Digital",
+                product1Title: "Visual identity kit",
+                product1Text: "Editable resources to strengthen a brand's graphic identity.",
+                product2Title: "Landing Page Template",
+                product2Text: "Modern HTML and CSS structure for small businesses and entrepreneurs.",
+                product3Title: "Social Media Pack",
+                product3Text: "Visual templates ready to customize and publish on social media.",
+                viewProduct: "View product",
+                commentsBadge: "COMMENTS",
+                commentsTitle: "Visitor feedback",
+                commentsIntro: "This section uses the semantic aside element because it contains complementary information related to the main content.",
+                comment1: "“Clear, modern design that is easy to navigate.”",
+                comment2: "“The mobile version keeps the content well organized.”",
+                nameLabel: "Name",
+                commentLabel: "Comment",
+                namePlaceholder: "Enter your name",
+                commentPlaceholder: "Write your comment",
+                sendComment: "Submit comment",
+                aboutEyebrow: "ABOUT SMART DESIGN",
+                aboutTitle: "Visual design and web development in one project",
+                aboutText: "Smart Design combines semantic HTML5, custom CSS, and Bootstrap to build a simple, modern, and adaptable interface.",
+                html5Text: "Semantic structure",
+                bootstrapText: "Grid and components",
+                cssText: "Custom styles",
+                responsiveText: "Mobile, tablet, and PC",
+                ctaTitle: "Ready to improve your digital presence?",
+                ctaText: "Smart Design provides visual solutions for small businesses and entrepreneurs.",
+                ctaButton: "Contact us",
+                footerRights: "© 2026 Smart Design. All rights reserved.",
+                footerLab: "Laboratory 5.2 - Responsive web page with Bootstrap and CSS"
+            }
+        };
+
+        const translatableElements = document.querySelectorAll("[data-i18n]");
+        const placeholderElements = document.querySelectorAll("[data-i18n-placeholder]");
+        const btnEs = document.getElementById("btn-es");
+        const btnEn = document.getElementById("btn-en");
+
+        function setLanguage(language) {
+            document.documentElement.lang = language;
+
+            translatableElements.forEach((element) => {
+                const key = element.dataset.i18n;
+                if (translations[language][key]) {
+                    element.textContent = translations[language][key];
+                }
+            });
+
+            placeholderElements.forEach((element) => {
+                const key = element.dataset.i18nPlaceholder;
+                if (translations[language][key]) {
+                    element.placeholder = translations[language][key];
+                }
+            });
+
+            const isSpanish = language === "es";
+            btnEs.classList.toggle("active", isSpanish);
+            btnEn.classList.toggle("active", !isSpanish);
+            btnEs.setAttribute("aria-pressed", String(isSpanish));
+            btnEn.setAttribute("aria-pressed", String(!isSpanish));
+        }
+
+        btnEs.addEventListener("click", () => setLanguage("es"));
+        btnEn.addEventListener("click", () => setLanguage("en"));
+    </script>
+</body>
+</html>

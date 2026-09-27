@@ -1,0 +1,209 @@
+/* =========================================================
+   Laboratorio 5.2 - Smart Design
+   CSS personalizado complementario a Bootstrap 5.3.8
+   ========================================================= */
+
+/* SELECTOR DE ELEMENTO
+   Aplica estilos generales al documento.
+*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a2530;
+    background-color: #ffffff;
+}
+
+/* MODELO DE CAJA
+   box-sizing permite que padding y border formen parte del
+   ancho y alto calculado del elemento.
+*/
+* {
+    box-sizing: border-box;
+}
+
+/* SELECTOR DE CLASE
+   Personaliza el logo dentro del Navbar de Bootstrap.
+*/
+.brand-logo {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* HERO
+   Bootstrap controla el Grid y la distribución.
+   Este CSS añade identidad visual adicional.
+*/
+.hero-section {
+    min-height: 100vh;
+    padding: 130px 0 80px;
+    color: #ffffff;
+    background:
+        linear-gradient(135deg, rgba(8, 27, 48, 0.97), rgba(0, 86, 255, 0.88));
+}
+
+.hero-section h1 {
+    max-width: 780px;
+}
+
+.hero-section .lead {
+    max-width: 720px;
+}
+
+.hero-logo-box {
+    max-width: 390px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.20);
+}
+
+.hero-logo {
+    max-height: 290px;
+    object-fit: contain;
+}
+
+/* SELECTOR DE ID
+   Permite personalizar una sección específica.
+*/
+#servicios {
+    background-color: #ffffff;
+}
+
+#productos {
+    border-top: 1px solid #e8edf2;
+    border-bottom: 1px solid #e8edf2;
+}
+
+.section-description {
+    max-width: 700px;
+}
+
+/* CARDS / MODELO DE CAJA
+   Se aplican padding, border, border-radius y shadow.
+*/
+.service-card,
+.product-card {
+    border-radius: 18px;
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.service-card:hover,
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.feature-icon {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background-color: #eaf1ff;
+    color: #0056ff;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.product-price {
+    color: #0056ff;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.comments-aside {
+    max-width: 400px;
+    margin-left: auto;
+    float: right;
+}
+
+/* SELECTORES COMBINADOS */
+.card .btn {
+    border-radius: 10px;
+}
+
+.navbar .nav-link {
+    font-weight: 600;
+}
+
+.navbar .nav-link:hover {
+    color: #8fb4ff;
+}
+
+/* Sección Nosotros */
+.about-logo {
+    width: min(100%, 420px);
+    padding: 1.5rem;
+}
+
+.info-box {
+    height: 100%;
+    padding: 1.25rem;
+    border: 1px solid #dce4ec;
+    border-radius: 14px;
+    background-color: #ffffff;
+}
+
+.info-box strong,
+.info-box span {
+    display: block;
+}
+
+.info-box strong {
+    color: #0b1f36;
+    margin-bottom: 0.25rem;
+}
+
+.info-box span {
+    color: #65717d;
+}
+
+/* Call to Action */
+.cta-section {
+    color: #ffffff;
+    background: linear-gradient(135deg, #0056ff, #0b1f36);
+}
+
+.cta-section p {
+    max-width: 650px;
+}
+
+/* =========================================================
+   DISEÑO RESPONSIVO
+   Bootstrap ya incorpora breakpoints responsivos.
+   Esta media query añade ajustes personalizados para móviles.
+   ========================================================= */
+@media (max-width: 767.98px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 70px;
+        text-align: center;
+        float: right;
+    }
+
+    .hero-section h1 {
+        font-size: 2.35rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1.05rem;
+    }
+
+    .hero-logo-box {
+        max-width: 300px;
+        padding: 1.25rem;
+    }
+
+    .about-logo {
+        width: min(100%, 300px);
+    }
+}
